@@ -4,7 +4,6 @@ gem 'rails', '3.2.5'
 gem 'will_paginate'
 gem 'russian'
 gem 'sqlite3', :group => :development
-gem 'event-calendar', :require => 'event_calendar'
 gem 'pg' , :group => :production
 gem 'activerecord-postgresql-adapter'
 gem "watu_table_builder", :require => "table_builder"
