@@ -1,0 +1,1 @@
+TestFS::Application.config.secret_token = '11ec14c777fbe4a6dd6cc0fa1073c9fa6b55ee96f6b0edc6e95fd5a00824f45a3caf784ed50097fdbb9d29b9bdf988cadf5bfbf918bfb0a6285d1628d3f5d852'

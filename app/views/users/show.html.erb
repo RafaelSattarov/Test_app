@@ -1,0 +1,28 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= @user.name %>
+      </h1>
+ 
+      <% unless @user.events.empty? %>
+        <table class="events" summary="User events">
+          <%= render @events %>
+        </table>
+        <%= will_paginate @events %>
+      <% end %>
+      
+      <td class="sidebar round">
+      <% if @user.nickname.blank? %>
+          <strong>Логин:</strong> <%= @user.name %><br />
+      <% else %>
+         <strong>Имя:</strong> <%= @user.nickname %><br />
+      <% end %>
+      
+      <strong>URL: </strong>  <%= link_to user_path(@user), @user %><br />
+      <strong>Событий:</strong> <%= @user.events.count %>
+      
+    </td>
+  </tr>
+</table>
+ 

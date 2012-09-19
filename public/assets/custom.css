@@ -1,0 +1,325 @@
+.container {
+  width: 710px;
+}
+
+body {
+background: url(../1.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+header {
+  padding-top: 20px;
+}
+
+header img {
+  padding: 1em;
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #E8E8E8;
+}
+
+section h1 {
+  font-size: 200%;
+}
+
+section h2 {
+  font-size: 80%;
+  text-align: center;
+}
+
+nav a {
+  color: #09c;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+nav a:visited {
+  color: #069;
+}
+
+nav {
+  float: right;
+}
+
+nav {
+  background-color: #B5B5B5;
+  padding: 0 0.7em;
+  white-space: nowrap;
+ 
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: white;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+a.signin_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 100px;
+  color: #fff;
+  background: #87CEFA;
+  font-size: 140%;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;
+}
+
+table.profile {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+td.main {
+  width: 70%;
+  padding: 1em;
+}
+
+td.sidebar {
+  width: 30%;
+  padding: 1em;
+  vertical-align: top;
+}
+
+.profile img.gravatar {
+  border: 1px solid #999;
+  margin-bottom: -15px;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+ul.users {
+  margin-top: 1em;
+}
+
+.users li {
+  list-style: none;
+}
+
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+div.user_info a {
+  text-decoration: none;
+}
+
+div.user_info span.user_name {
+  position: absolute;
+}
+
+form.new_event textarea {
+  height: 4em;
+  margin-bottom: 0;
+  width: 605px;
+  height: 64px;
+}
+
+#calendar td,
+#calendar th {
+  font-family: "Lucida Grande",arial,helvetica,sans-serif;
+  font-size: 14px;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+#calendar th {
+  background: #DDD;
+  color: #666;
+  text-align: center;
+  width: 14.2857142857143%;
+}
+
+#calendar td {
+  color: #777;
+  height: 80px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+#calendar .notmonth {
+  color: #CCC;
+}
+
+#calendar #month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#calendar #month a, #calendar #month a:hover {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #999;
+}
+
+#calendar .today {
+  background-color: #D7F2FF;
+}
+
+#calendar ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.day, .week, .month, .year {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  text-align: left;
+}
+.day a {
+  color: #336699;
+  text-decoration: none;
+}
+
+.day a:hover {
+  color: #333399;
+  text-decoration: underline;
+}
+
+.week a {
+  color: #00CC66;
+  text-decoration: none;
+}
+
+.week a:hover {
+  color: #00CC00;
+  text-decoration: underline;
+}
+
+
+.year a {
+  color: #9966FF;
+  text-decoration: none;
+}
+
+.year a:hover {
+  color: #9966FF;
+  text-decoration: underline;
+}
+
+.month a {
+  color: #CC0066;
+  text-decoration: none;
+}
+
+.month a:hover {
+  color: #CC0033;
+  text-decoration: underline;
+}
+
+
+tr {
+  line-height: 14px;
+}
+
+a {
+  color: #3333CC;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333399;
+  text-decoration: underline;
+}
+
+.month_link {
+  text-align: center;
+  font-size: 18px;
+}

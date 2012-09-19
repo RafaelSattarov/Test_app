@@ -1,0 +1,57 @@
+<h1>Все события:</h1>
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Начало</th>
+    <th>Окончание</th>
+    <th>Пользователь</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+  <% if event.period ==1 %>
+    <td>
+      <div class=day> 
+      <%= link_to event.name, event %>
+    </td>
+  <% end %>
+ 
+  <% if event.period ==2 %>
+    <td>
+      <div class=week> 
+      <%= link_to event.name, event %>
+    </td>
+  <% end %>
+  
+  <% if event.period ==3 %>
+    <td>
+      <div class=month> 
+      <%= link_to event.name, event %>
+    </td>
+  <% end %>
+  
+  <% if event.period ==4 %>
+    <td>
+      <div class=year> 
+      <%= link_to event.name, event %>
+    </td>
+  <% end %>
+    
+    <td><%= I18n.localize(event.start_at, :format => "%d.""%m.""%y" " в %H:%M") %></td>
+    <td><%= I18n.localize(event.end_at, :format => "%d.""%m.""%y" " в %H:%M") %></td>
+    <td><%= User.find(event.user_id).name %></td>
+    <td>
+      <% if  event.user_id == current_user.id or current_user.admin %>
+        <%= link_to 'Изменить', edit_event_path(event) %> </br>
+        <%= link_to 'Удалить', event, confirm: 'Вы действительно хотите удалить событие?',
+                                                                method: :delete %></td>
+      <% end %>
+    </tr>
+<% end %>
+</table>
+
+<br>
+

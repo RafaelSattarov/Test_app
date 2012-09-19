@@ -1,0 +1,36 @@
+<%= form_for(@event) do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+
+  <div class="field">
+    <%= f.label "Название:" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Подробное описание события:" %> <FONT color="#C0C0C0">   (необязательно)</FONT><br />
+    <%= f.text_area :content %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Начало события:" %><br />
+    <%= f.datetime_select :start_at %>
+  </div>
+  <div class="field">
+    <%= f.label "Окончание события:" %><br />
+    <%= f.datetime_select :end_at %>
+  </div>
+  
+  <b> Событие будет повторятся:</b>
+  <div class="field", true>
+    <%= f.radio_button :period, 1, :checked=>true %> <%= f.label "Каждый день" %><br /> 
+    <%= f.radio_button :period, 2  %> <%= f.label "Каждую неделю" %><br />
+    <%= f.radio_button :period, 3  %> <%= f.label "Каждый месяц" %><br />
+    <%= f.radio_button :period, 4  %> <%= f.label "Каждый год" %><br />
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Принять" %>
+  </div>
+  
+<% end %>
+

@@ -1,0 +1,41 @@
+<h1>Регистрация</h1>
+
+<%= form_for(@user) do |f| %>
+
+ <%= render 'shared/error_messages', :object => f.object %>
+ 
+  <div class="field">
+    <%= f.label "Логин:" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+    <div class="field">
+    <%= f.label "Полное имя:" %><FONT color="#C0C0C0">   (необязательное поле)</FONT><br /> 
+    <%= f.text_field :nickname %>
+  </div>
+    
+  <div class="field">
+    <%= f.label "Электронаая почта:" %><br />
+    <%= f.text_field :email %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Пароль:" %><br />
+    <%= f.password_field :password %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :password_confirmation, "Повторите пароль:" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  
+    <div class="field">
+    <%= f.label :password_confirmation, "Хотите быть администратором?" %>
+    <%= f.check_box :admin %> <FONT color="#C0C0C0">   (включено для тестирования)</FONT><br /> 
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+  
+<% end %>

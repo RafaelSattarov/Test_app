@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Название:</b>
+  <%= @event.name %>
+</p>
+
+<p>
+  <b>
+    <% if @event.period ==1 %>
+      Ежедневное событие
+    <% end %>
+ 
+    <% if @event.period ==2 %>
+      Еженедельное событие
+    <% end %>
+  
+    <% if @event.period ==3 %>
+      Ежемесячное событие
+    <% end %>
+    
+    <% if @event.period ==3 %>
+      Ежегодное событие
+    <% end %>
+  </b>    
+</p>
+
+  <% if @event.content.blank? %> <% else %>
+<p>
+  <b>Подробное описание:</b>
+  <%= @event.content %>
+</p>
+  <% end %>
+
+<p>
+  <b>Начало:</b>
+  <%= I18n.localize(@event.start_at, :format => "%d ""%B" " в %H:%M") %>
+</p>
+
+<p>
+  <b>Окончание:</b>
+  <%= I18n.localize(@event.end_at, :format => "%d ""%B" " в %H:%M") %>
+</p>
+  
+<p>
+  <b>Пользователь:</b>
+  <% if User.find(@event.user_id).nickname.blank? %> 
+    <%= User.find(@event.user_id).name %>
+  <% else %>
+    <%= User.find(@event.user_id).nickname %>
+  <% end %>
+</p>
+
+  <% if  @event.user_id == current_user.id or current_user.admin %>
+      <%= link_to 'Изменить', edit_event_path(@event) %> </br>
+      <%= link_to 'Удалить', @event, confirm: 'Вы действительно хотите удалить событие?',
+                                                                method: :delete %></td>
+  <% end %>

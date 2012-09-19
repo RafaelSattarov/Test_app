@@ -1,0 +1,67 @@
+<div id="calendar">
+  
+<h1>Календарь</h1>
+
+<b>Показать события:</b>
+
+<%= link_to "все", month_link2(@shown_month, 0) %> |
+<%= link_to "мои", month_link2(@shown_month, 1) %> <br>
+
+<div class=month_link >
+  <%=month_link3(@shown_month.prev_year, @who) %>
+  << <%=month_link(@shown_month.prev_month, @who) %>
+  <%=I18n.localize(@shown_month, :format => "%B %Y") %>
+  <%=month_link(@shown_month.next_month, @who) %> >>
+  <%=month_link3(@shown_month.next_year, @who) %>
+</div>
+
+<div id="calendar">
+<%= calendar_for(@tasks,  :year => @year, :month => @month, :first_day_of_week => 1) do |t| %>
+  <%= t.head('Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс') %>
+  <%= t.day do |day, tasks| %>
+    <%= day.day %>
+</br>
+    <% @event.each do |event| %>
+    
+<div class=year>
+      <% if event.period == 4 %>
+          <% if has_day?(day, event) %>
+            <% if event.start_at.strftime("%m-%d")==day.strftime("%m-%d") %> 
+              <%= link_to event.name, event %>
+            <% end %>
+          <% end %>
+      <% end %>
+</div>
+
+<div class=month>
+      <% if event.period == 3 %>
+          <% if has_day?(day, event) %>
+            <% if event.start_at.day==day.day %> 
+              <%= link_to event.name, event %>
+            <% end %>
+          <% end %>
+      <% end %>
+</div>
+
+<div class=week>       
+      <% if event.period == 2 %>
+        <% if has_day?(day, event) %>
+            <% if event.start_at.strftime("%a")==day.strftime("%a") %> 
+              <%= link_to event.name, event %>
+            <% end %>
+        <% end %>
+      <% end %>
+</div>
+
+<div class=day>    
+      <% if event.period ==1 %>
+          <% if has_day?(day, event) %>
+              <%= link_to event.name, event %>       
+          <% end %>
+      <% end %>
+</div>
+
+    <% end %>
+  <% end %>
+<% end %>
+</div>

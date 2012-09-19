@@ -1,0 +1,17 @@
+<h1>Войти</h1>
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+  <div class="field">
+    <%= f.label "Электронная почта:" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "Пароль" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Войти" %>
+  </div>
+<% end %>
+
+<p>Ещё не зарегистрированы ? <%= link_to "Вы можете зарегистрироваться прямо сейчас!", signup_path %></p>

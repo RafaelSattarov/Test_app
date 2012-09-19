@@ -1,0 +1,39 @@
+<tr>
+  <td class="event">
+    <span class="content">
+      
+    <% if event.period ==1 %>
+    <div class=day> 
+      <%= link_to event.name, event %>
+    <% end %>
+ 
+    <% if event.period ==2 %>
+    <div class=week> 
+      <%= link_to event.name, event %>
+    <% end %>
+  
+    <% if event.period ==3 %>
+    <div class=month> 
+      <%= link_to event.name, event %>
+    <% end %>
+      
+    <% if event.period ==4 %>
+    <div class=year> 
+      <%= link_to event.name, event %>
+    <% end %>
+    
+    <%= I18n.localize(event.start_at, :format =>"(Начало %d ""%B" " в %H:%M") %> )
+    </span>
+    <br>
+    <span class="timestamp">
+      Создано <%= time_ago_in_words(event.created_at) %> назад.
+      <% if  event.user_id == current_user.id or current_user.admin %>
+        <%= link_to 'Изменить', edit_event_path(event) %> |
+        <%= link_to 'Удалить', event, confirm: 'Вы действительно хотите удалить событие?',
+                                                                      method: :delete %>
+      <br><br>
+      <% end %>
+    </div>
+    </span>
+  </td>
+</tr>

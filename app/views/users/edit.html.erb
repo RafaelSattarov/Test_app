@@ -1,0 +1,35 @@
+<h1>Настройки </h1>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  
+  <div class="field">
+    <%= f.label "Логин:" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Полное имя:" %><FONT color="#C0C0C0">   (необязательное поле)</FONT><br />
+    <%= f.text_field :nickname %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Электронная почта:" %><br />
+    <%= f.text_field :email %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Пароль:" %><br />
+    <%= f.password_field :password %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :password_confirmation, "Повторите пароль:" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Сохранить" %>
+  </div>
+  
+<% end %>
